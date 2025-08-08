@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fresh Bites - Food Delivery</title>
+<!---bootstrap icon cdn-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<style>
+/* ===== Global Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    line-height: 1.6;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===== Navigation Bar ===== */
+header {
+    background: #ff4d4d;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+nav ul li a {
+    color: #fff;
+    font-weight: 500;
+    
+}
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    background: url('https://wallpapers.com/images/hd/classy-butter-chicken-platter-indian-food-s8a8b9aojk6kqoz0.jpg') center/cover no-repeat;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+}
+.hero h1 {
+    font-size: 2.5rem;
+}
+.hero p {
+    margin: 15px 0;
+    font-size: 1.2rem;
+}
+.hero button {
+    background: #ff4d4d;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* ===== Menu Section ===== */
+.menu-section {
+    padding: 50px 5%;
+    background: #f9f9f9;
+}
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+.menu-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.menu-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.menu-card h3 {
+    margin: 10px 0;
+}
+.menu-card p {
+    font-weight: bold;
+    color: #ff4d4d;
+}
+
+/* ===== Chefs Section ===== */
+.chefs-section {
+    padding: 50px 5%;
+    background: #fff;
+}
+.chefs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+.chef-card {
+    text-align: center;
+}
+.chef-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* ===== Testimonials ===== */
+.testimonials {
+    padding: 50px 5%;
+    background: #f9f9f9;
+}
+.testimonial-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.testimonial-card p {
+    font-style: italic;
+}
+
+/* ===== Contact Section ===== */
+.contact {
+    padding: 50px 5%;
+    background: #fff;
+}
+.contact form {
+    display: grid;
+    gap: 15px;
+    max-width: 500px;
+    margin: auto;
+}
+.contact input, .contact textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.contact button {
+    background: #ff4d4d;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* ===== Footer ===== */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 5%;
+}
+footer a {
+    margin: 0 10px;
+    color: #ff4d4d;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #ff4d4d;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 10px;
+    }
+    nav ul.show {
+        display: flex;
+    }
+    .menu-toggle {
+        display: block;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Header / Navbar ===== -->
+<header>
+    <div class="logo">Srinidhi</div>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <nav>
+        <ul id="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#chefs">Chefs</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- ===== Hero Section ===== -->
+<section class="hero" id="home">
+    <h1>Always Fresh & High Quality Products</h1>
+    <p>Delicious food delivered straight to your door.</p>
+    <button onclick="window.location='#menu'">View Menu</button>
+</section>
+
+<!-- ===== Menu Section ===== -->
+<section class="menu-section" id="menu">
+    <h2 class="section-title">Our Menu</h2>
+    <div class="menu-items">
+        <div class="menu-card">
+            <img src="https://i.pinimg.com/originals/0f/13/7d/0f137d2a243f7b63e5716ab4c10c3ee3.jpg" alt="Pizza">
+            <h3>Meals</h3>
+            <p><i class="bi bi-currency-rupee"></i>299</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://img.freepik.com/premium-photo/delicious-paneer-butter-masala-photography_928503-851.jpg?w=2000" alt="Burger">
+            <h3>Paneer Butter Masala</h3>
+            <p><i class="bi bi-currency-rupee"></i>99</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://i.ytimg.com/vi/ExRfzD4h1ak/maxresdefault.jpg" alt="Pasta">
+            <h3>Kaju Curry</h3>
+            <p><i class="bi bi-currency-rupee"></i>199</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://www.madhuseverydayindian.com/wp-content/uploads/2020/09/mushroom-curry-mushroom-masala.jpg" alt="Pasta">
+            <h3>Mushroom Curry</h3>
+            <p><i class="bi bi-currency-rupee"></i>199</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://myfoodstory.com/wp-content/uploads/2023/09/Mixed-Dhaba-Dal-9-1200x1800.jpg" alt="Pasta">
+            <h3>Dal</h3>
+            <p><i class="bi bi-currency-rupee"></i>199</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://i1.wp.com/thechowdownblog.com/wp-content/uploads/2021/01/Indian-Curry-Chicken.jpg?w=1392&ssl=1" alt="Pasta">
+            <h3>Chicken Butter Masala</h3>
+            <p><i class="bi bi-currency-rupee"></i>199</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://cdn.pixabay.com/photo/2022/09/24/07/31/pasta-7475756_1280.jpg" alt="Pasta">
+            <h3>Chicken Mogalai</h3>
+            <p><i class="bi bi-currency-rupee"></i>199</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://www.corriecooks.com/wp-content/uploads/2018/09/Instant-Pot-Indian-Malai-Mutton-Curry.jpg" alt="Pasta">
+            <h3>Mutton Curry</h3>
+            <p><i class="bi bi-currency-rupee"></i>199</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://vismaifood.com/storage/app/uploads/public/daa/96d/7bc/thumb__1200_0_0_0_auto.jpg" alt="Pasta">
+            <h3>Apollo Fish curry</h3>
+            <p><i class="bi bi-currency-rupee"></i>199</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://2.bp.blogspot.com/-dBfWrHfriTo/VE8ZFjPFQ-I/AAAAAAAACMY/dIRYS5rnINg/s1600/ANB_5442.JPG" alt="Pasta">
+            <h3>Apollo Fish Fry</h3>
+            <p><i class="bi bi-currency-rupee"></i>199</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://www.licious.in/blog/wp-content/uploads/2023/01/Shutterstock_2047827035-1024x683.jpg" alt="Pasta">
+            <h3>Chicken Biryani</h3>
+            <p><i class="bi bi-currency-rupee"></i>199</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://pariwaardelights.s3.us-east-1.amazonaws.com/uploads/all/UhyfkndjaQLNB8JgUta5CqsABBVqrYVEQ6zjoIVv.jpg" alt="Pasta">
+            <h3>Special Biryani<br>(Boneless)</h3>
+            <p><i class="bi bi-currency-rupee"></i>199</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://tse1.mm.bing.net/th/id/OIP.MUgHlUP9l9EW2BlwZB_LqwHaHa?pid=Api&P=0&h=180" alt="Pasta">
+            <h3>Mutton Biryani</h3>
+            <p><i class="bi bi-currency-rupee"></i>199</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://thumbs.dreamstime.com/b/tandoori-roti-24052196.jpg" alt="Pasta">
+            <h3>Tandoor Roti</h3>
+            <p><i class="bi bi-currency-rupee"></i>199</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://www.yummyfoodrecipes.com/resources/picture/org/Tandoori-Roti.jpg" alt="Pasta">
+            <h3>Butter Non</h3>
+            <p><i class="bi bi-currency-rupee"></i>199</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Chefs Section ===== -->
+<section class="chefs-section" id="chefs">
+    <h2 class="section-title">Our Best Chefs</h2>
+    <div class="chefs">
+        <div class="chef-card">
+            <img src="don.jpg" alt="Chef 1">
+            <h2>All Rounder</h2>
+            <h3>Mr.Ramanjaneyulu</h3>
+        </div>
+        <div class="chef-card">
+            <img src="don.jpg" alt="Chef 2">
+            <h2>All Rounder</h2>
+            <h3>Mr.Somusekhar Reddy</h3>
+        </div>
+        <div class="chef-card">
+            <img src="don.jpg" alt="Chef 2">
+            <h2>Item Chef</h2>
+            <h3>Vjay Kumar</h3>
+        </div>
+        <div class="chef-card">
+            <img src="don.jpg" alt="Chef 2">
+            <h2>Roti Chef</h2>
+            <h3>jb</h3>
+        </div>
+        <div class="chef-card">
+            <img src="don.jpg" alt="Chef 2">
+            <h2>Asst Chef</h2>
+            <h3>Pavan kumar</h3>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Testimonials ===== -->
+<section class="testimonials">
+    <h2 class="section-title">What Our Customers Say</h2>
+    <div class="testimonial-card">
+        <p>"Srinidhi never disappoints! The food is amazing and always on time."</p>
+        <strong>- Sreenu A.</strong>
+    </div>
+    <div class="testimonial-card">
+        <p>"The best pizza in town, hands down!"</p>
+        <strong>- Muthu Raju K.</strong>
+    </div>
+</section>
+
+<!-- ===== Contact Section ===== -->
+<section class="contact" id="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="4" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+    <p style="text-align:center; margin-top:20px;">
+        Or WhatsApp us directly: <a href="https://wa.me/7989266782" target="_blank">Click Here</a>
+    </p>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+    <p>© 2025 FreshBites | All Rights Reserved</p>
+    <p>
+        <a href="#">Facebook</a> |
+        <a href="#">Instagram</a> |
+        <a href="#">Twitter</a>
+    </p>
+</footer>
+
+<!-- ===== JavaScript for Mobile Menu ===== -->
+<script>
+const toggle = document.getElementById('menu-toggle');
+const navLinks = document.getElementById('nav-links');
+
+toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+});
+</script>
+
+</body>
+</html>
