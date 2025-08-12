@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Srinidhi Restaurant - Food Delivery</title>
+<!---bootstrap icon cdn-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== Header / Navbar ===== -->
+ <nav class="navbar">
+    <div class="logo">Srinidhi</div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="chef.html">Chefs</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+<!-- ===== Hero Section ===== -->
+<section class="hero" id="home">
+    <h1>Always Fresh & High Quality Products</h1>
+    <p>Delicious food delivered straight to your door.</p>
+    <button onclick="window.location='menu.html'">View Menu</button>
+</section>
+
+<!-- ===== Menu Section ===== -->
+<section class="menu-section" id="menu">
+    <h2 class="section-title">Our Menu</h2>
+    <div class="menu-items">
+        <div class="menu-card">
+            <img src="https://i.pinimg.com/originals/0f/13/7d/0f137d2a243f7b63e5716ab4c10c3ee3.jpg" alt="Pizza">
+            <h3>Meals</h3>
+            <p><i class="bi bi-currency-rupee"></i>299</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://img.freepik.com/premium-photo/delicious-paneer-butter-masala-photography_928503-851.jpg?w=2000" alt="Burger">
+            <h3>Paneer Butter Masala</h3>
+            <p><i class="bi bi-currency-rupee"></i>99</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://i.ytimg.com/vi/ExRfzD4h1ak/maxresdefault.jpg" alt="Pasta">
+            <h3>Kaju Curry</h3>
+            <p><i class="bi bi-currency-rupee"></i>199</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://www.madhuseverydayindian.com/wp-content/uploads/2020/09/mushroom-curry-mushroom-masala.jpg" alt="Pasta">
+            <h3>Mushroom Curry</h3>
+            <p><i class="bi bi-currency-rupee"></i>199</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://myfoodstory.com/wp-content/uploads/2023/09/Mixed-Dhaba-Dal-9-1200x1800.jpg" alt="Pasta">
+            <h3>Dal</h3>
+            <p><i class="bi bi-currency-rupee"></i>199</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://i1.wp.com/thechowdownblog.com/wp-content/uploads/2021/01/Indian-Curry-Chicken.jpg?w=1392&ssl=1" alt="Pasta">
+            <h3>Chicken Butter Masala</h3>
+            <p><i class="bi bi-currency-rupee"></i>199</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://cdn.pixabay.com/photo/2022/09/24/07/31/pasta-7475756_1280.jpg" alt="Pasta">
+            <h3>Chicken Mogalai</h3>
+            <p><i class="bi bi-currency-rupee"></i>199</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://www.corriecooks.com/wp-content/uploads/2018/09/Instant-Pot-Indian-Malai-Mutton-Curry.jpg" alt="Pasta">
+            <h3>Mutton Curry</h3>
+            <p><i class="bi bi-currency-rupee"></i>199</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://vismaifood.com/storage/app/uploads/public/daa/96d/7bc/thumb__1200_0_0_0_auto.jpg" alt="Pasta">
+            <h3>Apollo Fish curry</h3>
+            <p><i class="bi bi-currency-rupee"></i>199</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://2.bp.blogspot.com/-dBfWrHfriTo/VE8ZFjPFQ-I/AAAAAAAACMY/dIRYS5rnINg/s1600/ANB_5442.JPG" alt="Pasta">
+            <h3>Apollo Fish Fry</h3>
+            <p><i class="bi bi-currency-rupee"></i>199</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://www.licious.in/blog/wp-content/uploads/2023/01/Shutterstock_2047827035-1024x683.jpg" alt="Pasta">
+            <h3>Chicken Biryani</h3>
+            <p><i class="bi bi-currency-rupee"></i>199</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://pariwaardelights.s3.us-east-1.amazonaws.com/uploads/all/UhyfkndjaQLNB8JgUta5CqsABBVqrYVEQ6zjoIVv.jpg" alt="Pasta">
+            <h3>Special Biryani<br>(Boneless)</h3>
+            <p><i class="bi bi-currency-rupee"></i>199</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://tse1.mm.bing.net/th/id/OIP.MUgHlUP9l9EW2BlwZB_LqwHaHa?pid=Api&P=0&h=180" alt="Pasta">
+            <h3>Mutton Biryani</h3>
+            <p><i class="bi bi-currency-rupee"></i>199</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://thumbs.dreamstime.com/b/tandoori-roti-24052196.jpg" alt="Pasta">
+            <h3>Tandoor Roti</h3>
+            <p><i class="bi bi-currency-rupee"></i>199</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://www.yummyfoodrecipes.com/resources/picture/org/Tandoori-Roti.jpg" alt="Pasta">
+            <h3>Butter Non</h3>
+            <p><i class="bi bi-currency-rupee"></i>199</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Chefs Section ===== -->
+<section class="chefs-section" id="chefs">
+    <h2 class="section-title">Our Best Chefs</h2>
+    <div class="chefs">
+        <div class="chef-card">
+            <img src="don.jpg" alt="Chef 1">
+            <h2 style="font-size: 18px;color: #47d9ec;">All Rounder</h2>
+            <h3>Mr.Ramanjaneyulu</h3>
+        </div>
+        <div class="chef-card">
+            <img src="don.jpg" alt="Chef 2">
+            <h2 style="font-size: 18px;color: #47d9ec;">All Rounder</h2>
+            <h3>Mr.Somusekhar Reddy</h3>
+        </div>
+        <div class="chef-card">
+            <img src="don.jpg" alt="Chef 2">
+            <h2 style="font-size: 18px;color: #47d9ec;">Item Chef</h2>
+            <h3>Vjay Kumar</h3>
+        </div>
+        <div class="chef-card">
+            <img src="don.jpg" alt="Chef 2">
+            <h2 style="font-size: 18px;color: #47d9ec;">Roti Chef</h2>
+            <h3>jb</h3>
+        </div>
+        <div class="chef-card">
+            <img src="don.jpg" alt="Chef 2">
+            <h2 style="font-size: 18px;color: #47d9ec;">Asst Chef</h2>
+            <h3>Pavan kumar</h3>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Testimonials ===== -->
+<section class="testimonials">
+    <h2 class="section-title">What Our Customers Say</h2>
+    <div class="testimonial-card">
+        <p>"Srinidhi never disappoints! The food is amazing and always on time."</p>
+        <strong>- Sreenu A.</strong>
+    </div>
+    <div class="testimonial-card">
+        <p>"The best pizza in town, hands down!"</p>
+        <strong>- Muthu Raju K.</strong>
+    </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+    <p>© 2025 SRINIDHI | All Rights Reserved</p>
+    <p>
+        <a href="#">Facebook</a> |
+        <a href="#">Instagram</a> |
+        <a href="#">Twitter</a>
+    </p>
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Menu</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!---bootstrap icon cdn-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      text-align: center;
+    }
+
+    .header {
+      background: #ff6b35;
+      color: white;
+      padding: 15px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    aside {
+      flex: 1 1 200px;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    aside button {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: none;
+      background: #ff6b35;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    aside button:hover {
+      background: #e85d2f;
+    }
+
+    main {
+      flex: 3 1 500px;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .card h3 {
+      margin: 10px 0;
+    }
+
+    .card p {
+      color: #555;
+      font-weight: bold;
+    }
+
+    footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 5%;
+}
+footer a {
+    margin: 0 10px;
+    color: #ff4d4d;
+}
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      aside {
+        order: -1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== Header / Navbar ===== -->
+ <nav class="navbar">
+    <div class="logo">Srinidhi</div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="chef.html">Chefs</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+<div class="container">
+  <!-- Sidebar -->
+  <aside>
+    <button onclick="filterMenu('all')">All</button>
+    <button onclick="filterMenu('veg')">Veg</button>
+    <button onclick="filterMenu('non-veg')">Non-Veg</button>
+    <button onclick="filterMenu('desserts')">Desserts</button>
+    <button onclick="filterMenu('starters')">Starters</button>
+    <button onclick="filterMenu('mocktails')">Mocktails</button>
+    <button onclick="filterMenu('icecreams')">Ice Creams</button>
+    <button onclick="filterMenu('cooldrinks')">Cool Drinks</button>
+  </aside>
+
+  <!-- Main Content -->
+  <main id="menuItems">
+    <div class="menu-card" data-category="veg">
+      <img src="https://img.freepik.com/premium-photo/delicious-paneer-butter-masala-photography_928503-851.jpg?w=2000" alt="Burger">
+      <h3>Paneer Butter Masala</h3>
+      <p>₹180</p>
+    </div>
+    <div class="menu-card" data-category="veg">
+      <img src="https://i.ytimg.com/vi/ExRfzD4h1ak/maxresdefault.jpg" alt="Pasta">
+      <h3>Kaju Butter Masala</h3>
+      <p>₹250</p>
+    </div>
+    <div class="menu-card" data-category="veg">
+     <img src="https://www.madhuseverydayindian.com/wp-content/uploads/2020/09/mushroom-curry-mushroom-masala.jpg" alt="Pasta">
+            <h3>Mushroom Curry</h3>
+      <p>₹180</p>
+    </div>
+    <div class="menu-card" data-category="veg">
+      <img src="https://www.flavouroffood.com/wp-content/uploads/2021/06/Kaju-Paneer-Masala-Recipe-2.jpg" alt="">
+      <h3>Paneer kaju mix Masala</h3>
+      <p>₹180</p>
+    </div>
+    <div class="menu-card" data-category="veg">
+      <img src="https://myfoodstory.com/wp-content/uploads/2023/09/Mixed-Dhaba-Dal-9-1200x1800.jpg" alt="Pasta">
+            <h3>Dal Tadka</h3>
+      <p>₹120</p>
+    </div>
+    <div class="menu-card" data-category="veg">
+     <img src="https://myfoodstory.com/wp-content/uploads/2023/09/Mixed-Dhaba-Dal-9-1200x1800.jpg" alt="Pasta">
+            <h3>Dal</h3>
+      <p>₹100</p>
+    </div>
+    <div class="menu-card" data-category="veg">
+      <img src="https://i.pinimg.com/originals/88/70/43/8870437f007cfc8dedb7580ef9e9d911.jpg" alt="">
+      <h3>Veg Burger</h3>
+      <p>₹150</p>
+    </div>
+    <div class="menu-card" data-category="non-veg">
+        <img src="https://www.licious.in/blog/wp-content/uploads/2023/01/Shutterstock_2047827035-1024x683.jpg" alt="Pasta">
+            <h3>Chicken Biryani</h3>
+      <p>₹220</p>
+    </div>
+     <div class="menu-card" data-category="non-veg">
+            <img src="https://i1.wp.com/thechowdownblog.com/wp-content/uploads/2021/01/Indian-Curry-Chicken.jpg?w=1392&ssl=1" alt="Pasta">
+            <h3>Chicken Butter Masala</h3>
+            <p><i class="bi bi-currency-rupee"></i>250</p>
+        </div>
+        <div class="menu-card" data-category="non-veg">
+            <img src="https://cdn.pixabay.com/photo/2022/09/24/07/31/pasta-7475756_1280.jpg" alt="Pasta">
+            <h3>Chicken Mogalai</h3>
+            <p><i class="bi bi-currency-rupee"></i>250</p>
+        </div>
+        <div class="menu-card" data-category="non-veg">
+            <img src="https://www.corriecooks.com/wp-content/uploads/2018/09/Instant-Pot-Indian-Malai-Mutton-Curry.jpg" alt="Pasta">
+            <h3>Mutton Curry</h3>
+            <p><i class="bi bi-currency-rupee"></i>300</p>
+        </div>
+        <div class="menu-card" data-category="non-veg">
+            <img src="https://vismaifood.com/storage/app/uploads/public/daa/96d/7bc/thumb__1200_0_0_0_auto.jpg" alt="Pasta">
+            <h3>Apollo Fish curry</h3>
+            <p><i class="bi bi-currency-rupee"></i>200</p>
+        </div>
+        <div class="menu-card" data-category="non-veg">
+            <img src="https://2.bp.blogspot.com/-dBfWrHfriTo/VE8ZFjPFQ-I/AAAAAAAACMY/dIRYS5rnINg/s1600/ANB_5442.JPG" alt="Pasta">
+            <h3>Apollo Fish Fry</h3>
+            <p><i class="bi bi-currency-rupee"></i>220</p>
+        </div>
+        <div class="menu-card" data-category="non-veg">
+            <img src="https://www.licious.in/blog/wp-content/uploads/2023/01/Shutterstock_2047827035-1024x683.jpg" alt="Pasta">
+            <h3>Chicken Biryani</h3>
+            <p><i class="bi bi-currency-rupee"></i>220</p>
+        </div>
+        <div class="menu-card" data-category="non-veg">
+            <img src="https://pariwaardelights.s3.us-east-1.amazonaws.com/uploads/all/UhyfkndjaQLNB8JgUta5CqsABBVqrYVEQ6zjoIVv.jpg" alt="Pasta">
+            <h3>Special Biryani<br>(Boneless)</h3>
+            <p><i class="bi bi-currency-rupee"></i>250</p>
+        </div>
+        <div class="menu-card" data-category="non-veg">
+            <img src="https://tse1.mm.bing.net/th/id/OIP.MUgHlUP9l9EW2BlwZB_LqwHaHa?pid=Api&P=0&h=180" alt="Pasta">
+            <h3>Mutton Biryani</h3>
+            <p><i class="bi bi-currency-rupee"></i>320</p>
+        </div>
+    <div class="menu-card" data-category="desserts">
+      <img src="https://pipingpotcurry.com/wp-content/uploads/2023/01/Sheer-Khurma-Piping-Pot-Curry-9.jpg" alt="">
+      <h3>sheer kerma</h3>
+      <p>₹120</p>
+    </div>
+    <div class="menu-card" data-category="mocktails">
+      <img src="https://d32miag6ta013h.cloudfront.net/master_cocktails/1876/fr-fr/medium/gettyimages-542212406_(1).jpg" alt="">
+      <h3>Mojito</h3>
+      <p>₹90</p>
+    </div>
+    <div class="menu-card" data-category="icecreams">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.4gFvpD3TdNpXT6ch1_WxxAHaE7?pid=Api&P=0&h=180" alt="">
+      <h3>Vanilla Ice Cream</h3>
+      <p>₹60</p>
+    </div>
+    <div class="menu-card" data-category="cooldrinks">
+      <img src="https://www.webcontentdevelopment.com/wp-content/uploads/2022/09/coca-cola-brand.jpg" alt="">
+      <h3>Coca Cola</h3>
+      <p>₹40</p>
+    </div>
+    <div class="menu-card" data-category="starters">
+      <img src="https://ranveerbrar.com/wp-content/uploads/2021/02/Chicken-Spring-Rolls-1.jpg" alt="">
+      <h3>Spring Rolls</h3>
+      <p>₹110</p>
+    </div>
+    <div class="menu-card" data-category="desserts">
+      <img src="https://www.mydelicious-recipes.com/home/getogimage?id=282" alt="">
+      <h3>Gulab Jamun</h3>
+      <p>₹80</p>
+    </div>
+    <div class="menu-card" data-category="mocktails">
+      <img src="https://www.thespruceeats.com/thmb/cDQK02EZOGbvxzBzV_u7-2-woTk=/4494x3000/filters:fill(auto,1)/virgin-pina-colada-recipe-2097115_05-5b0d8124ff1b7800364356ae.jpg" alt="">
+      <h3>Virgin Pina Colada</h3>
+      <p>₹100</p>
+    </div>
+    <div class="menu-card" data-category="icecreams">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.g6VWiGSiv4F-q0LJMMXqHgHaEJ?pid=Api&P=0&h=180" alt="">
+      <h3>Chocolate Ice Cream</h3>
+      <p>₹70</p>
+  </main>
+</div>
+
+<!-- ===== Footer ===== -->
+<footer>
+    <p>© 2025 SRINIDHI | All Rights Reserved</p>
+    <p>
+        <a href="#">Facebook</a> |
+        <a href="#">Instagram</a> |
+        <a href="#">Twitter</a>
+    </p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
